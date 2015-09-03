@@ -14,6 +14,11 @@ private:
     std::string errorMessage_;
 };
 
+class InternalLibAVError: public VideoProcessingError {
+public:
+    InternalLibAVError(const std::string& errorMessage): VideoProcessingError(errorMessage) {}
+};
+
 }
 
 #endif /* end of include guard: VIDEO_PROCESSING_ERROR_H_ */
