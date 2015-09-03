@@ -20,7 +20,7 @@ macro(add_app_executable BUILD_TYPE)
         link_directories(${LIBAV_LIB})
         add_executable(${PROJECT} ${SOURCES}) #создаем исполняемый файл
         set_target_properties(${PROJECT} PROPERTIES COMPILE_FLAGS "-O2 -std=c++11 -pedantic -Wall -Wextra -DNDEBUG")#задаем ключи компилятора и макросы для цели ${PROJECT}
-        target_link_libraries(${PROJECT} avcodec)
+        target_link_libraries(${PROJECT} avcodec avutil)
         add_custom_command(TARGET ${PROJECT} POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E make_directory ../${BUILD_TYPE}
             COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${PROJECT}> ../${BUILD_TYPE}
