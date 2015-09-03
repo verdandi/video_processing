@@ -7,6 +7,10 @@
 namespace VideoProcessing {
 
 class VideoProcessingError: public std::exception {
+/* класс исключений, используемый в случае общих ошибок в программе.
+ * Является корнем иерархии исключений, поэтому достаточно перехватывать
+ * исключения этого типа
+ */
 public:
     VideoProcessingError(const std::string& errorMessage): errorMessage_(errorMessage) {}
     const char* what() const noexcept { return errorMessage_.c_str(); }
@@ -15,6 +19,9 @@ private:
 };
 
 class InternalLibAVError: public VideoProcessingError {
+/*
+ * Тип исключений для внутренних ошибок в библиотеке libav
+ */
 public:
     InternalLibAVError(const std::string& errorMessage): VideoProcessingError(errorMessage) {}
 };

@@ -8,6 +8,11 @@ extern "C" {
 namespace VideoProcessing {
 
 class Coder {
+/*
+ * Абстрактный класс. Предоставляет интерфейс для всех классов,
+ * реализующих функции кодирования/декодирования.
+ * Проводит единственную за сессию регистрацию кодеров библиотеки libav
+ */
 public:
     Coder() {
         static bool isRegistered = false;
