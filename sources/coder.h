@@ -1,6 +1,11 @@
 #ifndef CODER_H_
 #define CODER_H_
 
+/*
+ * developed by: Kuksov Pavel
+ * e-mail: aimed.fire@gmail.com
+ */
+
 extern "C" {
     #include "libavcodec/avcodec.h"
 }

@@ -10,4 +10,8 @@ void deleteAVCodecContext(AVCodecContext* codecContext) {
     av_free(codecContext);
 } //end of void deleteAVCodecContext()
 
+void deleteAVParser(AVCodecParserContext* parser) {
+    av_parser_close(parser);
+} //end of void deleteAVParser()
+
 } /* VideoProcessing */
