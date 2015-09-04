@@ -1,4 +1,5 @@
 #include "h264_decoder.h"
+#include "video_processing_utils.h"
 
 #include <iostream>
 
