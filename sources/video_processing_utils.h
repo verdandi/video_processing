@@ -8,6 +8,8 @@
  * e-mail: aimed.fire@gmail.com
  */
 
+#include <cstdio>
+
 extern "C" {
     #include "libavcodec/avcodec.h"
 }
@@ -19,6 +21,8 @@ void deleteAVCodec(AVCodec* codec);
 void deleteAVCodecContext(AVCodecContext* codecContext);
 
 void deleteAVParser(AVCodecParserContext* parser);
+
+void deleteFile(std::FILE* file);
 
 }
 

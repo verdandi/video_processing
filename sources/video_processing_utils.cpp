@@ -1,5 +1,7 @@
 #include "video_processing_utils.h"
 
+#include <iostream>
+
 namespace VideoProcessing {
 
 void deleteAVCodec(AVCodec*) {
@@ -13,5 +15,9 @@ void deleteAVCodecContext(AVCodecContext* codecContext) {
 void deleteAVParser(AVCodecParserContext* parser) {
     av_parser_close(parser);
 } //end of void deleteAVParser()
+
+void deleteFile(std::FILE* file) {
+    std::fclose(file);
+} //end of void deleteFile()
 
 } /* VideoProcessing */
