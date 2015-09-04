@@ -24,6 +24,8 @@ void deleteAVParser(AVCodecParserContext* parser);
 
 void deleteFile(std::FILE* file);
 
+void deleteAVFrame(AVFrame* frame);
+
 }
 
 #endif /* end of include guard: VIDEO_PROCESSING_UTILS_H_ */
