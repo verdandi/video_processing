@@ -52,14 +52,14 @@ std::shared_ptr<AVFrame> H264Decoder::decode() {
 
         if ( packet.size > 0 && numberOfParsedBytes >= 0 ) {
             int numberOfDecodedBytes = avcodec_decode_video2(codecContext_.get(), frame_.get(), &decodeIsFinished, &packet);
+            av_free_packet(&packet);
+
             if ( numberOfDecodedBytes < 0 ) {
                 throw InternalLibAVError("decoding failed");
             } //end of if
 
             //если декодирование пакета завершено
             if ( decodeIsFinished == 1 ) {
-                av_free_packet(&packet);
-
                 // устанавливаем параметры декодированного кадра
                 codecContext_->width = frame_->width;
                 codecContext_->height = frame_->height;
