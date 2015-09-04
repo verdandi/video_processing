@@ -2,6 +2,7 @@
 #define H264_DECODER_H_
 
 #include "coder.h"
+#include "video_processing_error.h"
 
 /*
  * developed by: Kuksov Pavel
