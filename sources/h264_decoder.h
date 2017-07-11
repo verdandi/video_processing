@@ -19,7 +19,6 @@ class H264Decoder: public Coder {
  */
 public:
     H264Decoder (const std::string& bitstreamPath);
-    //~H264Decoder () {}
 
     /*
      * Декодировать очередной кадр видео потока.

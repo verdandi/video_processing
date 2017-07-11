@@ -24,9 +24,9 @@ public:
 
         if ( !isRegistered ) {
             avcodec_register_all();
+            isRegistered = true;
         } //end of if
     }
-    virtual ~Coder() = 0;
 };//end of declaration class Coder
 
 }

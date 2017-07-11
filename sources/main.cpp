@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 
     if ( filePath == "" ) {
         std::cout << "path to source bitstream not defined\n";
-        std::cout << "Usage: " << argv[0] << " <-b=<path to source bitstream>> [-n=<number of frame>] [-p=<path to dir>]\n";
+        std::cout << "Usage: " << argv[0] << " <-b=<full path to source bitstream>> [-n=<number of frame>] [-p=<full path to dir for saving decoded frames>]\n";
         return 0;
     } //end of if
 

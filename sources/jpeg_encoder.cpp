@@ -51,10 +51,16 @@ void JPEGEncoder::encode(std::shared_ptr<AVFrame> frame,
     } //end of while
 
     std::FILE* JPEGFile = fopen(filename.c_str(), "wb");
-    fwrite(packet.data, 1, packet.size, JPEGFile);
-    fclose(JPEGFile);
-    av_free_packet(&packet);
-    avcodec_close(codecContext_.get());
+    if ( JPEGFile != nullptr ) {
+        fwrite(packet.data, 1, packet.size, JPEGFile);
+        fclose(JPEGFile);
+        av_free_packet(&packet);
+        avcodec_close(codecContext_.get());
+    } else {
+        av_free_packet(&packet);
+        avcodec_close(codecContext_.get());
+        throw VideoProcessingError("Can not open the file for saving JPEG file\n");
+    }
 } //end of void JPEGEncoder::encode()
 
 } /* VideoProcessing */
